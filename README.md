@@ -1,8 +1,19 @@
-# Better Body Academy — Free Call Funnel
+# Better Body Academy — Funnels
 
-Mobile-first "Book a Free Call" sales funnel for Better Body Academy.
+Mobile-first, self-contained marketing pages for Better Body Academy.
+Shared brand: black `#0a0a0a` · accent `#00AEEF` · Inter / Roboto / JetBrains Mono.
 
-- `index.html` — the full funnel (self-contained)
-- `coach-team.webp` — coaching team photo
+## Pages
 
-To wire up booking: open `index.html`, find `[GHL EMBED]`, and paste your GoHighLevel calendar iframe.
+- `index.html` — "Book a Free Call" funnel
+- `sales.html` — VSL / sales page for the 12-Week Transformation System
+- `coach-team.webp` — coaching team photo (used by both)
+
+## Wiring it up
+
+**index.html** — find `[GHL EMBED]` and paste your GoHighLevel calendar iframe.
+Every "Book my free call" button already scrolls to that section.
+
+**sales.html** — two placeholders:
+- `[VSL EMBED]` — paste your video iframe (Vimeo / Wistia / YouTube) and delete the placeholder block.
+- `[CHECKOUT LINK]` — replace `href="#"` on every `.js-buy` button with your real checkout URL.
