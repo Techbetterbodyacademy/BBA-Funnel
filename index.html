@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Better Body Academy — Book Your Free Transformation Call</title>
+<meta name="description"
+  content="Book a free 1-on-1 call with a Better Body Academy coach and get a custom plan built for your body. 4,000+ transformations and counting.">
+<meta name="theme-color" content="#0a0a0a">
+
+<!-- ============================================================
+     BBA "BOOK A FREE CALL" FUNNEL  ·  mobile-first
+     Brand: black #0a0a0a · accent #00AEEF · Inter / Roboto / JetBrains Mono
+     ------------------------------------------------------------
+     >> WIRE UP YOUR BOOKING <<
+     Search for  [GHL EMBED]  below. Paste your GoHighLevel
+     calendar iframe / form embed inside that block. Every
+     "Book my free call" button already points to #book, which
+     scrolls to that section — no other wiring needed.
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Roboto:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --black:#0a0a0a;
+    --coral:#00AEEF;        /* brand accent (named "coral" across BBA files) */
+    --coral-deep:#0090c8;
+    --white:#ffffff;
+
+    --glass-bg:rgba(255,255,255,.05);
+    --glass-border:rgba(255,255,255,.10);
+
+    --t-100:rgba(255,255,255,1);
+    --t-70:rgba(255,255,255,.70);
+    --t-50:rgba(255,255,255,.50);
+    --t-30:rgba(255,255,255,.30);
+
+    --display:'Inter',system-ui,sans-serif;
+    --body:'Roboto',system-ui,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+
+    --maxw:1080px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  html,body{min-height:100%}
+
+  body{
+    background:var(--black);
+    color:var(--t-100);
+    font-family:var(--body);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  /* ambient coral halos */
+  body::before{
+    content:"";
+    position:fixed;inset:0;
+    background:
+      radial-gradient(80% 55% at 50% 6%, rgba(0,174,239,.14), transparent 60%),
+      radial-gradient(60% 40% at 50% 100%, rgba(0,174,239,.06), transparent 55%);
+    pointer-events:none;z-index:0;
+  }
+  /* faded box grid */
+  body::after{
+    content:"";
+    position:fixed;inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+    background-size:60px 60px;
+    -webkit-mask-image:radial-gradient(ellipse at 50% 30%, #000 30%, transparent 78%);
+    mask-image:radial-gradient(ellipse at 50% 30%, #000 30%, transparent 78%);
+    pointer-events:none;z-index:0;
+  }
+
+  .wrap{position:relative;z-index:1}
+  .container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 clamp(18px,5vw,40px)}
+
+  /* ---------------- sticky header ---------------- */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:clamp(10px,2.4vw,16px) clamp(16px,5vw,40px);
+    background:rgba(10,10,10,.72);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--glass-border);
+  }
+  .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .badge{width:clamp(38px,7vw,46px);height:auto;flex:0 0 auto;display:block}
+  .badge .ring{fill:none;stroke:rgba(255,255,255,.85);stroke-width:1.4}
+  .badge .ring.thin{stroke:rgba(255,255,255,.45);stroke-width:.8}
+  .badge .ringtext{fill:rgba(255,255,255,.85);font-family:var(--display);font-weight:600;font-size:5.4px;letter-spacing:.55px}
+  .badge .dot{fill:rgba(255,255,255,.7)}
+  .badge .mono text{fill:#fff;font-family:var(--display);font-weight:800;font-size:28px}
+  .nav-mark{font-family:var(--display);font-weight:800;font-size:clamp(15px,4vw,18px);letter-spacing:2px;color:var(--white)}
+  .nav-cta{display:inline-flex}
+
+  /* ---------------- buttons ---------------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    font-family:var(--display);font-weight:800;letter-spacing:.2px;
+    text-decoration:none;cursor:pointer;border:0;
+    border-radius:999px;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+  }
+  .btn-primary{
+    background:linear-gradient(180deg, var(--coral), var(--coral-deep));
+    color:#021018;
+    box-shadow:0 10px 30px rgba(0,174,239,.28), inset 0 1px 0 rgba(255,255,255,.35);
+  }
+  .btn-primary:hover,.btn-primary:focus-visible{
+    transform:translateY(-2px);
+    box-shadow:0 14px 40px rgba(0,174,239,.42), inset 0 1px 0 rgba(255,255,255,.45);
+    outline:none;
+  }
+  .btn-lg{font-size:clamp(15px,4.2vw,19px);padding:clamp(15px,4vw,19px) clamp(24px,6vw,38px);width:100%;max-width:420px}
+  .btn-sm{font-size:clamp(12px,3.4vw,14px);padding:10px 18px}
+  .btn .arrow{transition:transform .25s ease}
+  .btn:hover .arrow{transform:translateX(4px)}
+
+  /* ---------------- section scaffolding ---------------- */
+  section{position:relative;padding:clamp(48px,11vw,96px) 0}
+  .eyebrow{
+    font-family:var(--mono);font-weight:500;
+    font-size:clamp(10px,2.6vw,12px);letter-spacing:4px;
+    color:var(--coral);text-transform:uppercase;
+  }
+  h1,h2,h3{font-family:var(--display);color:var(--white);letter-spacing:-.02em;line-height:1.05}
+  h2{font-size:clamp(28px,7.4vw,52px);font-weight:800;max-width:18ch}
+  h3{font-size:clamp(19px,5vw,24px);font-weight:800;letter-spacing:-.01em}
+  .lead{font-family:var(--body);font-size:clamp(15px,4.2vw,19px);line-height:1.55;color:var(--t-70);max-width:54ch}
+  .center{text-align:center;margin-left:auto;margin-right:auto}
+  .center .lead{margin-left:auto;margin-right:auto}
+
+  /* ---------------- hero ---------------- */
+  .hero{padding-top:clamp(40px,9vw,72px);text-align:center}
+  .hero-inner{display:flex;flex-direction:column;align-items:center;gap:clamp(16px,4vw,24px)}
+  .pill{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:var(--mono);font-size:clamp(10px,2.8vw,12px);letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--t-70);
+    padding:7px 14px;border-radius:999px;
+    background:var(--glass-bg);border:1px solid var(--glass-border);
+  }
+  .pill .live{width:7px;height:7px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 0 rgba(0,174,239,.6);animation:pulse 2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(0,174,239,.55)}70%{box-shadow:0 0 0 9px rgba(0,174,239,0)}100%{box-shadow:0 0 0 0 rgba(0,174,239,0)}}
+  .hero h1{
+    font-weight:800;font-size:clamp(34px,9.4vw,72px);line-height:1.0;
+    max-width:16ch;
+  }
+  .hero h1 .hl{color:var(--coral)}
+  .hero .lead{font-size:clamp(16px,4.4vw,21px);max-width:50ch}
+  .hero-cta{display:flex;flex-direction:column;align-items:center;gap:12px;width:100%;margin-top:4px}
+  .reassure{font-family:var(--mono);font-size:clamp(10px,2.8vw,12px);letter-spacing:1px;color:var(--t-50);text-transform:uppercase}
+  .reassure b{color:var(--t-70);font-weight:500}
+
+  /* rating row */
+  .rating{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;color:var(--t-70);font-size:clamp(12px,3.4vw,14px)}
+  .stars{color:var(--coral);letter-spacing:2px}
+
+  /* ---------------- proof strip ---------------- */
+  .proof{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    gap:clamp(10px,3vw,28px);
+    border-top:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border);
+    padding:clamp(24px,6vw,40px) 0;
+  }
+  .proof-item{text-align:center}
+  .proof-num{font-family:var(--display);font-weight:800;font-size:clamp(24px,6.4vw,44px);line-height:1;color:var(--white)}
+  .proof-num .u{color:var(--coral)}
+  .proof-label{font-family:var(--mono);font-size:clamp(8px,2.4vw,11px);letter-spacing:2px;text-transform:uppercase;color:var(--t-50);margin-top:8px}
+
+  /* ---------------- cards / glass ---------------- */
+  .glass{
+    background:var(--glass-bg);
+    border:1px solid var(--glass-border);
+    border-radius:18px;
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  }
+
+  /* problem list */
+  .pains{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,3vw,18px);margin-top:clamp(26px,6vw,40px)}
+  .pain{display:flex;gap:12px;align-items:flex-start;padding:clamp(16px,4vw,22px)}
+  .pain .x{flex:0 0 auto;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:rgba(255,90,90,.12);color:#ff7a7a;font-weight:800;font-family:var(--display);font-size:14px;margin-top:2px}
+  .pain p{font-size:clamp(14px,3.8vw,16px);line-height:1.45;color:var(--t-70)}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,3vw,22px);margin-top:clamp(28px,6vw,44px)}
+  .step{padding:clamp(22px,5vw,30px);display:flex;flex-direction:column;gap:12px}
+  .step-n{font-family:var(--mono);font-size:13px;letter-spacing:2px;color:var(--coral)}
+  .step h3{margin-top:2px}
+  .step p{font-size:clamp(14px,3.8vw,16px);line-height:1.5;color:var(--t-70)}
+
+  /* benefits */
+  .benefits{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,3vw,18px);margin-top:clamp(28px,6vw,44px)}
+  .benefit{display:flex;gap:14px;align-items:flex-start;padding:clamp(18px,4vw,24px)}
+  .benefit .check{flex:0 0 auto;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:rgba(0,174,239,.14);color:var(--coral);margin-top:1px}
+  .benefit h3{font-size:clamp(15px,4.2vw,18px)}
+  .benefit p{font-size:clamp(13px,3.6vw,15px);line-height:1.45;color:var(--t-70);margin-top:4px}
+
+  /* testimonials */
+  .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,3vw,20px);margin-top:clamp(28px,6vw,44px)}
+  .tcard{padding:clamp(20px,4.5vw,26px);display:flex;flex-direction:column;gap:14px}
+  .tcard .quote{font-size:clamp(14px,3.8vw,16px);line-height:1.55;color:var(--t-100)}
+  .tcard .who{display:flex;align-items:center;gap:12px;margin-top:auto}
+  .avatar{width:42px;height:42px;border-radius:50%;flex:0 0 auto;display:grid;place-items:center;font-family:var(--display);font-weight:800;color:#021018;background:linear-gradient(180deg,var(--coral),var(--coral-deep))}
+  .who .name{font-family:var(--display);font-weight:800;font-size:14px;color:var(--white)}
+  .who .meta{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--coral)}
+
+  /* coach / authority */
+  .coach{display:grid;grid-template-columns:0.9fr 1.1fr;gap:clamp(20px,5vw,44px);align-items:center}
+  .coach-photo{
+    border-radius:18px;min-height:clamp(220px,60vw,360px);
+    border:1px solid var(--glass-border);overflow:hidden;position:relative;
+    background:linear-gradient(165deg,#1a1a1a 0%,#0b0b0b 75%);
+  }
+  .coach-photo img{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;object-position:center top;display:block;
+  }
+  /* subtle brand wash + bottom fade so it sits in the dark theme */
+  .coach-photo::after{
+    content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:
+      radial-gradient(120% 90% at 30% 12%, rgba(0,174,239,.18), transparent 50%),
+      linear-gradient(180deg, transparent 45%, rgba(10,10,10,.55) 100%);
+  }
+  .coach-photo .tag{position:absolute;top:14px;left:14px;z-index:2;font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--t-70);text-shadow:0 1px 6px rgba(0,0,0,.6)}
+  .coach ul{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:18px}
+  .coach li{display:flex;gap:12px;align-items:flex-start;font-size:clamp(14px,3.8vw,16px);color:var(--t-70);line-height:1.45}
+  .coach li .check{flex:0 0 auto;color:var(--coral);margin-top:2px}
+
+  /* ---------------- CTA band ---------------- */
+  .band{
+    border-radius:24px;overflow:hidden;position:relative;
+    padding:clamp(34px,8vw,64px) clamp(22px,6vw,56px);
+    text-align:center;
+    background:
+      radial-gradient(90% 130% at 50% 0%, rgba(0,174,239,.22), transparent 60%),
+      linear-gradient(180deg,#121212,#0b0b0b);
+    border:1px solid var(--glass-border);
+  }
+  .band h2{margin:0 auto}
+  .band .lead{margin:16px auto 26px}
+  .scarce{font-family:var(--mono);font-size:clamp(10px,2.8vw,12px);letter-spacing:1px;text-transform:uppercase;color:var(--t-50);margin-top:16px}
+  .scarce b{color:var(--coral);font-weight:500}
+
+  /* ---------------- FAQ ---------------- */
+  .faq{display:flex;flex-direction:column;gap:12px;margin-top:clamp(28px,6vw,40px);max-width:780px;margin-left:auto;margin-right:auto}
+  details{padding:clamp(16px,4vw,22px) clamp(18px,4.4vw,24px)}
+  details summary{
+    list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;
+    font-family:var(--display);font-weight:800;font-size:clamp(15px,4vw,18px);color:var(--white);
+  }
+  details summary::-webkit-details-marker{display:none}
+  details summary .ic{flex:0 0 auto;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--glass-border);color:var(--coral);transition:transform .3s ease}
+  details[open] summary .ic{transform:rotate(45deg)}
+  details p{margin-top:14px;font-size:clamp(14px,3.8vw,16px);line-height:1.55;color:var(--t-70)}
+
+  /* ---------------- booking ---------------- */
+  .book-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,5vw,40px);align-items:start;margin-top:clamp(28px,6vw,44px)}
+  .book-copy ul{list-style:none;display:flex;flex-direction:column;gap:14px;margin-top:22px}
+  .book-copy li{display:flex;gap:12px;align-items:flex-start;font-size:clamp(14px,3.8vw,16px);color:var(--t-70);line-height:1.45}
+  .book-copy li .check{flex:0 0 auto;color:var(--coral);margin-top:2px}
+  .embed{
+    min-height:clamp(420px,80vw,560px);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;
+    text-align:center;padding:clamp(26px,6vw,40px);
+  }
+  .embed .ico{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;background:rgba(0,174,239,.14);color:var(--coral)}
+  .embed h3{font-size:clamp(17px,4.6vw,20px)}
+  .embed p{font-size:clamp(13px,3.6vw,15px);color:var(--t-50);max-width:34ch;line-height:1.5}
+  .embed code{font-family:var(--mono);color:var(--coral);font-size:12px}
+
+  /* ---------------- mobile sticky CTA bar ---------------- */
+  .sticky-cta{
+    position:fixed;left:0;right:0;bottom:0;z-index:60;
+    padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+    background:rgba(10,10,10,.86);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border-top:1px solid var(--glass-border);
+    display:none;
+  }
+  .sticky-cta .btn{max-width:none}
+
+  /* ---------------- footer ---------------- */
+  footer.site{
+    text-align:center;padding:clamp(40px,9vw,64px) 0 clamp(48px,10vw,72px);
+    border-top:1px solid var(--glass-border);
+  }
+  footer .m1{font-family:var(--display);font-weight:600;font-size:clamp(13px,3.6vw,17px);color:var(--t-70)}
+  footer .m2{font-family:var(--display);font-weight:400;font-size:clamp(13px,3.6vw,15px);color:var(--t-30);margin-left:6px}
+  footer .copy{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--t-30);margin-top:22px}
+
+  /* ---------------- reveal on scroll ---------------- */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    *{animation:none!important}
+    html{scroll-behavior:auto}
+  }
+
+  /* =====================================================
+     RESPONSIVE — mobile-first refinements
+     ===================================================== */
+  @media (max-width:880px){
+    .coach{grid-template-columns:1fr}
+    .coach-photo{order:-1}
+    .book-grid{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr}
+    .tgrid{grid-template-columns:1fr}
+  }
+  @media (max-width:600px){
+    /* show the always-visible bottom CTA on phones */
+    .sticky-cta{display:block}
+    .nav-cta{display:none}            /* avoid duplicate CTA on small screens */
+    body{padding-bottom:76px}         /* room for sticky bar */
+    .proof{grid-template-columns:1fr 1fr;gap:22px 10px}
+    .pains{grid-template-columns:1fr}
+    .benefits{grid-template-columns:1fr}
+    .band{border-radius:18px}
+  }
+  @media (max-width:380px){
+    .nav-mark{display:none}           /* keep header tidy on tiny screens */
+  }
+</style>
+</head>
+<body>
+
+<!-- =================== STICKY HEADER =================== -->
+<header class="nav">
+  <a class="nav-brand" href="#top" aria-label="Better Body Academy home">
+    <svg class="badge" viewBox="0 0 100 100" aria-hidden="true">
+      <defs>
+        <path id="arcTop" d="M 8,50 A 42,42 0 0 1 92,50"/>
+        <path id="arcBottom" d="M 10,50 A 40,40 0 0 0 90,50"/>
+      </defs>
+      <circle class="ring" cx="50" cy="50" r="47"/>
+      <circle class="ring thin" cx="50" cy="50" r="37"/>
+      <text class="ringtext"><textPath href="#arcTop" startOffset="50%" text-anchor="middle">BETTER BODY ACADEMY</textPath></text>
+      <text class="ringtext"><textPath href="#arcBottom" startOffset="50%" text-anchor="middle">TRANSFORMATION TEAM</textPath></text>
+      <circle class="dot" cx="9" cy="50" r="1.3"/>
+      <circle class="dot" cx="91" cy="50" r="1.3"/>
+      <g class="mono" transform="translate(50,50)">
+        <text x="0" y="10" text-anchor="start">B</text>
+        <text x="0" y="10" text-anchor="start" transform="scale(-1,1)">B</text>
+      </g>
+    </svg>
+    <span class="nav-mark">BBA</span>
+  </a>
+  <a class="btn btn-primary btn-sm nav-cta" href="#book">Book free call <span class="arrow">&rarr;</span></a>
+</header>
+
+<div class="wrap" id="top">
+
+  <!-- =================== HERO =================== -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <span class="pill"><span class="live"></span> Now booking free calls this week</span>
+      <p class="eyebrow">Transformation Team</p>
+      <h1>Your body changes the day you <span class="hl">commit</span>.</h1>
+      <p class="lead">Book a free 1-on-1 call with a Better Body Academy coach. We&rsquo;ll map out a plan built for <em>your</em> body, your schedule, and your goal &mdash; no guesswork, no generic templates.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="#book">Book my free call <span class="arrow">&rarr;</span></a>
+        <span class="reassure"><b>100% free</b> &middot; 20 minutes &middot; zero pressure</span>
+      </div>
+      <div class="rating">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span>Rated 4.9/5 by <b>4,000+</b> members worldwide</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== PROOF STRIP =================== -->
+  <div class="container">
+    <div class="proof reveal">
+      <div class="proof-item"><div class="proof-num">4,000<span class="u">+</span></div><div class="proof-label">Transformations</div></div>
+      <div class="proof-item"><div class="proof-num">20<span class="u">+</span></div><div class="proof-label">Countries</div></div>
+      <div class="proof-item"><div class="proof-num">12<span class="u">+</span></div><div class="proof-label">Years Coaching</div></div>
+      <div class="proof-item"><div class="proof-num">98<span class="u">%</span></div><div class="proof-label">Finish Rate</div></div>
+    </div>
+  </div>
+
+  <!-- =================== PROBLEM =================== -->
+  <section>
+    <div class="container">
+      <div class="center reveal">
+        <p class="eyebrow">Sound familiar?</p>
+        <h2 class="center">You don&rsquo;t need more willpower. You need the right plan.</h2>
+        <p class="lead">Most people don&rsquo;t fail because they&rsquo;re lazy. They fail because they&rsquo;re following advice that was never built for them.</p>
+      </div>
+      <div class="pains">
+        <div class="pain glass reveal"><span class="x">&times;</span><p>You&rsquo;ve started over more times than you can count &mdash; and nothing sticks.</p></div>
+        <div class="pain glass reveal"><span class="x">&times;</span><p>Random YouTube workouts and crash diets that leave you exhausted and confused.</p></div>
+        <div class="pain glass reveal"><span class="x">&times;</span><p>The scale moves for a week, then bounces right back the moment life gets busy.</p></div>
+        <div class="pain glass reveal"><span class="x">&times;</span><p>No accountability, no coach in your corner, no idea if you&rsquo;re even doing it right.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== HOW IT WORKS =================== -->
+  <section>
+    <div class="container">
+      <div class="center reveal">
+        <p class="eyebrow">How it works</p>
+        <h2 class="center">Three steps to a body you&rsquo;re proud of.</h2>
+      </div>
+      <div class="steps">
+        <div class="step glass reveal">
+          <span class="step-n">STEP 01</span>
+          <h3>Book your free call</h3>
+          <p>Grab a 20-minute slot with a real BBA coach. Tell us where you are now and where you want to be.</p>
+        </div>
+        <div class="step glass reveal">
+          <span class="step-n">STEP 02</span>
+          <h3>Get your custom plan</h3>
+          <p>We build training and nutrition around your body, your schedule, and the goal that actually matters to you.</p>
+        </div>
+        <div class="step glass reveal">
+          <span class="step-n">STEP 03</span>
+          <h3>Transform with support</h3>
+          <p>Weekly check-ins, real coaches, and a team that keeps you moving &mdash; all the way to the finish line.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== BENEFITS =================== -->
+  <section>
+    <div class="container">
+      <div class="center reveal">
+        <p class="eyebrow">What you get</p>
+        <h2 class="center">Coaching that meets you where you are.</h2>
+      </div>
+      <div class="benefits">
+        <div class="benefit glass reveal">
+          <span class="check" aria-hidden="true">&#10003;</span>
+          <div><h3>A plan built for your body</h3><p>No copy-paste templates. Training and macros tailored to your starting point and goal.</p></div>
+        </div>
+        <div class="benefit glass reveal">
+          <span class="check" aria-hidden="true">&#10003;</span>
+          <div><h3>Real human coaches</h3><p>Message your coach, get form checks, and adjust the plan as life happens.</p></div>
+        </div>
+        <div class="benefit glass reveal">
+          <span class="check" aria-hidden="true">&#10003;</span>
+          <div><h3>Weekly accountability</h3><p>Check-ins that keep you consistent &mdash; the #1 reason our finish rate is 98%.</p></div>
+        </div>
+        <div class="benefit glass reveal">
+          <span class="check" aria-hidden="true">&#10003;</span>
+          <div><h3>A team in your corner</h3><p>Join thousands of members across 20+ countries who keep each other going.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== TESTIMONIALS =================== -->
+  <section>
+    <div class="container">
+      <div class="center reveal">
+        <p class="eyebrow">Real members</p>
+        <h2 class="center">Transformations that lasted.</h2>
+        <p class="lead">A few of the 4,000+ people who started with a single free call.</p>
+      </div>
+      <div class="tgrid">
+        <div class="tcard glass reveal">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p class="quote">&ldquo;I&rsquo;d tried everything. The free call was the first time someone actually listened and built a plan around <em>my</em> life. Down 34 lbs and it&rsquo;s staying off.&rdquo;</p>
+          <div class="who"><span class="avatar">D</span><div><div class="name">Dan T.</div><div class="meta">Lost 34 lbs</div></div></div>
+        </div>
+        <div class="tcard glass reveal">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p class="quote">&ldquo;Having a coach check in every week changed everything. I finally feel strong, and my kids have a mum who can keep up with them.&rdquo;</p>
+          <div class="who"><span class="avatar">M</span><div><div class="name">Michelle F.</div><div class="meta">Gained energy &amp; strength</div></div></div>
+        </div>
+        <div class="tcard glass reveal">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p class="quote">&ldquo;No fads, no nonsense &mdash; just a plan that fit around shift work. Best decision I&rsquo;ve made for myself in years.&rdquo;</p>
+          <div class="who"><span class="avatar">S</span><div><div class="name">Steve B.</div><div class="meta">Down 2 pant sizes</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== COACH / AUTHORITY =================== -->
+  <section>
+    <div class="container">
+      <div class="coach">
+        <div class="coach-photo reveal">
+          <span class="tag">Your coaching team</span>
+          <img src="coach-team.webp" alt="Better Body Academy coaching team" loading="lazy">
+        </div>
+        <div class="reveal">
+          <p class="eyebrow">Why Better Body Academy</p>
+          <h2>Coaches who&rsquo;ve guided thousands &mdash; now in your corner.</h2>
+          <p class="lead">BBA isn&rsquo;t an app that spits out a workout. It&rsquo;s a team of real coaches who&rsquo;ve spent 12+ years helping everyday people get lean, strong, and confident &mdash; and keep it.</p>
+          <ul>
+            <li><span class="check">&#10003;</span> 4,000+ transformations across 20+ countries</li>
+            <li><span class="check">&#10003;</span> A 98% program finish rate &mdash; almost unheard of in fitness</li>
+            <li><span class="check">&#10003;</span> Separate, proven programs for men and women</li>
+            <li><span class="check">&#10003;</span> Real accountability, not just another PDF</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== CTA BAND =================== -->
+  <section>
+    <div class="container">
+      <div class="band reveal">
+        <p class="eyebrow">Your move</p>
+        <h2 class="center">One free call could be the turning point.</h2>
+        <p class="lead center">Twenty minutes. A real coach. A clear plan. Zero pressure and zero cost &mdash; whether you join or not, you&rsquo;ll leave knowing exactly what to do next.</p>
+        <a class="btn btn-primary btn-lg" href="#book" style="margin:0 auto">Book my free call <span class="arrow">&rarr;</span></a>
+        <p class="scarce">Limited slots &mdash; <b>only a handful of free calls open this week</b></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== FAQ =================== -->
+  <section>
+    <div class="container">
+      <div class="center reveal">
+        <p class="eyebrow">Questions</p>
+        <h2 class="center">Before you book.</h2>
+      </div>
+      <div class="faq">
+        <details class="glass reveal"><summary>Is the call really free?<span class="ic">+</span></summary><p>Yes &mdash; 100% free and there&rsquo;s no obligation to join anything. It&rsquo;s a 20-minute conversation to understand your goal and map out your next steps.</p></details>
+        <details class="glass reveal"><summary>What happens on the call?<span class="ic">+</span></summary><p>Your coach will ask about your goals, your past attempts, and your schedule, then walk you through exactly how a plan for your body would look. If BBA is a fit, they&rsquo;ll explain how to start.</p></details>
+        <details class="glass reveal"><summary>I&rsquo;m a total beginner &mdash; is this for me?<span class="ic">+</span></summary><p>Absolutely. Most of our 4,000+ members started exactly where you are. Your plan is built for your current level, not someone else&rsquo;s.</p></details>
+        <details class="glass reveal"><summary>I&rsquo;ve failed before. Why is this different?<span class="ic">+</span></summary><p>Because you won&rsquo;t be doing it alone or guessing. Real coaches, weekly accountability, and a plan that adapts to your life are why our finish rate is 98%.</p></details>
+        <details class="glass reveal"><summary>How long is the call?<span class="ic">+</span></summary><p>About 20 minutes. Just pick a time that works for you and we&rsquo;ll take care of the rest.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== BOOKING =================== -->
+  <section id="book">
+    <div class="container">
+      <div class="center reveal">
+        <p class="eyebrow">Book your call</p>
+        <h2 class="center">Pick a time. We&rsquo;ll do the rest.</h2>
+      </div>
+      <div class="book-grid">
+        <div class="book-copy reveal">
+          <h3>Here&rsquo;s what to expect</h3>
+          <ul>
+            <li><span class="check">&#10003;</span> A relaxed 20-minute call with a real BBA coach</li>
+            <li><span class="check">&#10003;</span> A clear, personalised plan of attack for your goal</li>
+            <li><span class="check">&#10003;</span> Honest answers &mdash; no hype, no pressure to join</li>
+            <li><span class="check">&#10003;</span> You leave knowing your exact next step, free either way</li>
+          </ul>
+          <p class="scarce" style="margin-top:22px">Spots are limited &mdash; <b>book before they fill up</b>.</p>
+        </div>
+
+        <!-- ===================================================
+             [GHL EMBED]  Paste your GoHighLevel calendar /
+             booking iframe here. Delete the placeholder .embed
+             block below and drop your <iframe> in its place.
+             Example:
+             <iframe src="https://api.leadconnectorhq.com/widget/booking/XXXX"
+                     style="width:100%;border:none;min-height:560px;border-radius:18px"
+                     scrolling="no"></iframe>
+             =================================================== -->
+        <div class="glass embed reveal" id="ghl-embed">
+          <span class="ico" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="4.5" width="18" height="16" rx="3" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M8 2.5v4M16 2.5v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
+          <h3>Calendar loads here</h3>
+          <p>Paste your GoHighLevel booking widget where you see <code>[GHL EMBED]</code> in this file. Every &ldquo;Book my free call&rdquo; button already scrolls here.</p>
+          <a class="btn btn-primary btn-lg" href="#top" style="max-width:320px">Back to top <span class="arrow">&uarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== FOOTER =================== -->
+  <footer class="site">
+    <div class="container">
+      <span class="m1">Impacting one million lives.</span>
+      <span class="m2">One transformation at a time.</span>
+      <span class="copy">&copy; 2026 Better Body Academy &middot; All rights reserved</span>
+    </div>
+  </footer>
+
+</div>
+
+<!-- =================== MOBILE STICKY CTA =================== -->
+<div class="sticky-cta">
+  <a class="btn btn-primary btn-lg" href="#book">Book my free call &mdash; it&rsquo;s free <span class="arrow">&rarr;</span></a>
+</div>
+
+<script>
+  // Reveal-on-scroll
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}
+      });
+    },{threshold:.12, rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){io.observe(e);});
+  })();
+
+  // Hide the mobile sticky CTA once the booking section is in view (avoids overlap)
+  (function(){
+    var bar = document.querySelector('.sticky-cta');
+    var book = document.getElementById('book');
+    if(!bar || !book || !('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ bar.style.opacity = en.isIntersecting ? '0' : '1';
+        bar.style.pointerEvents = en.isIntersecting ? 'none' : 'auto'; });
+    },{threshold:.25});
+    io.observe(book);
+    bar.style.transition = 'opacity .3s ease';
+  })();
+</script>
+</body>
+</html>
